@@ -1,23 +1,12 @@
-import re
+import random
 
-print('Program only supports +-:* operations and only int arguments')
-print('Format of expression: \'x + y\'')
-while True:
-    try:
-        print('Enter the expression to calculate: ', end='')
-        expression = input()
-        search_result = re.search(r"[ \t]*?(\d+)[ \t]*?([-+:*])[ \t]*(\d+)[ \t]*?", expression)
+# Random digits generating
+first_digit: int = random.randint(0, 1000)
+second_digit: int = random.randint(0, 1000)
 
-        print('The result of calculate: ', end='')
-        match search_result.group(2):
-            case '-':
-                print(int(search_result.group(1)) - int(search_result.group(3)))
-            case '+':
-                print(int(search_result.group(1)) + int(search_result.group(3)))
-            case ':':
-                print(int(search_result.group(1)) / int(search_result.group(3)))
-            case '*':
-                print(int(search_result.group(1)) * int(search_result.group(3)))
-    except ValueError:
-        print('Error, please enter digits')
+# Displaying random digits
+print(f"{first_digit=}, {second_digit=}")
 
+# Displaying the result of an integer division and the remainder of the division
+print(f"Result of an integer division: {first_digit // second_digit}")
+print(f"Result of remainder of the division: {first_digit % second_digit}")

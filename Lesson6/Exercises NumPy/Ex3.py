@@ -1,9 +1,9 @@
 import numpy as np
 
-"""
-if you see this, then I did not have time to complete the tasks before they begin to check
-"""
-
 arr = np.random.randint(0, 100, (5, 5))
+print('Initial matrix:\n', arr)
 
-print(arr)
+for i in np.arange(0, arr[0].size):
+    arr[i] = arr[i] - np.mean(arr[i])
+
+print('Changed matrix:\n', arr)
